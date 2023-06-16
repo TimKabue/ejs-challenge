@@ -3,9 +3,11 @@
 <h1>Home</h1>
 
 <% posts.forEach(post => { %>
-    <div>
-        <p><%= post.blogTitle %></p>
-        <p><%= post.blogPost %></p>
+    <div class="">
+        <a href="/posts/<%= _.kebabCase(post.blogTitle) %>">
+            <h2><%= post.blogTitle %></h2>
+        </a>
+        <p class="d-inline my-paragraph"><%= post.blogPost %></p><a class="d-inline" href="/posts/<%= _.kebabCase(post.blogTitle) %>">Read more</a>
     </div>
 <% }); %>
 
